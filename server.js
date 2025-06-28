@@ -13,7 +13,6 @@ const allowedOrigins = [
 
 //Middlewares
 app.use(express.static("public"));
-// app.use(cors());
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -22,15 +21,14 @@ app.use(cors({
       callback(new Error("Not allowed by CORS"));
     }
   },
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Métodos permitidos
+  methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
   allowedHeaders: ["Content-Type", "Authorization"] // Encabezados permitidos
 }));
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
 
 routes(app);
 
-// dbInitialSetup();
+dbInitialSetup();
 
 app.listen(APP_PORT, () =>
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}!\n`),
