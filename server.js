@@ -8,7 +8,8 @@ const APP_PORT = process.env.APP_PORT || 8001;
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:3000"
+  "http://localhost:3000",
+  "https://crafterbeer.vercel.app"
 ];
 
 //Middlewares
