@@ -4,7 +4,7 @@ module.exports = (sequelize, Model, DataTypes) => {
   Category.init(
     {
       id: {
-        type: DataTypes.BIGINT.UNSIGNED,
+        type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },

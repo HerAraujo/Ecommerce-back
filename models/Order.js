@@ -4,7 +4,7 @@ module.exports = (sequelize, Model, DataTypes) => {
   Order.init(
     {
       id: {
-        type: DataTypes.BIGINT.UNSIGNED,
+        type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },
