@@ -2,7 +2,9 @@ const db = require("../models");
 
 module.exports = async () => {
   //create tables:
-  await db.sequelize.sync({ force: true });
+  // await db.sequelize.sync({ force: true });
+  await db.sequelize.sync();
+  // force: true will drop the table if it already exists
   console.log("[Database] ¡Las tablas fueron creadas!");
 
   // execute seeders:
