@@ -10,11 +10,7 @@ const sequelize = new Sequelize(
     dialect: process.env.DB_CONNECTION,
     dialectModule: require("pg"), //enable when cloud
     logging: false,
-    port: process.env.DB_PORT,
-    dialectOptions: {
-      connectTimeout: 10000,
-      family: 4, // 👈 esto es clave para evitar el uso de IPv6
-    }
+    port: process.env.DB_PORT
   },
 );
 
