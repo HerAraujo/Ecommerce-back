@@ -19,10 +19,13 @@ async function showOne(req, res) {
       where: { slug: req.params.slug },
       include: Product,
     });
+    if (!category) {
+      return res.status(404).json({ message: `Category ${req.params.slug} not found` });
+    }
 
     res.json(category);
   } catch (err) {
-    res.status(404).json({ message: `Category not found` });
+    res.status(500).json({ message: `Error retrieving category: ${err.message}` });
   }
 }
 
