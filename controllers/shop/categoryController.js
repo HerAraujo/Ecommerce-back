@@ -7,9 +7,9 @@ async function show(req, res) {
         active: true,
       },
     });
-    res.json(categories);
+    categories.length === 0 ? res.status(404).json({ message: `Categories not found` }) : res.json(categories);
   } catch (err) {
-    res.status(404).json({ message: `Categories not found` });
+    res. status(500).json({ message: `Error retrieving categories: ${err.message}` });
   }
 }
 
