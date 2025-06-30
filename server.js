@@ -9,7 +9,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://crafterbeer.vercel.app"
+  "https://crafterbeer.vercel.app",
+  "https://crafterbeer-admin.vercel.app"
 ];
 
 //Middlewares
